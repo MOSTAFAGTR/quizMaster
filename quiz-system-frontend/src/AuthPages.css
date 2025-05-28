@@ -1,0 +1,190 @@
+/* src/styles/AuthPages.css (or src/AuthPages.css - adjust import paths in components) */
+
+/* Ensure Poppins font is globally available via index.html or App.css */
+
+.auth-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the card vertically */
+  align-items: center; /* Center the card horizontally */
+  min-height: 100vh; /* Take full viewport height */
+  padding: 20px;
+  width: 100%;
+  background-color: #eef2f7; /* Softer, very light blue-grey page background */
+  /* Optional: Subtle gradient background for the page */
+  /* background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
+}
+
+.auth-form-card {
+  background: #ffffff;
+  padding: 35px 45px 40px 45px; /* Slightly more padding at bottom */
+  border-radius: 16px; /* More pronounced rounding */
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07); /* Softer, more layered shadow */
+  width: 100%;
+  max-width: 430px; 
+  text-align: center; /* Default text align for content inside card */
+  border: 1px solid #e9ecef; /* Very subtle border */
+  overflow: hidden; /* Ensures no content breaks the border-radius */
+}
+
+.auth-form-card h2 {
+  font-size: 2rem; /* Larger title */
+  font-weight: 600;
+  color: #2c3e50; /* Dark, slightly desaturated blue/grey */
+  margin-bottom: 0.75rem; /* Tighter margin below h2 */
+}
+
+.auth-form-icon {
+  font-size: 2.8rem; 
+  color: #007bff; /* Primary brand color */
+  margin-bottom: 1.25rem;
+  line-height: 1;
+  /* If using an SVG icon, ensure it's centered and sized appropriately */
+}
+
+.auth-subtitle {
+  color: #5a6268; 
+  margin-bottom: 2.5rem; 
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 80%; /* Keep subtitle from being too wide */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.auth-form-card .form-group {
+  text-align: left; /* Align labels and inputs left within the group */
+  margin-bottom: 1.5rem; 
+}
+
+.auth-form-card .form-group label {
+  font-size: 0.875rem; /* 14px */
+  color: #495057; 
+  margin-bottom: 0.5rem; /* 8px */
+  font-weight: 500;
+  display: block;
+}
+
+/* Assuming global .form-group input/select styles from App.css provide base
+   These are overrides for a more "fashionable" look within auth cards */
+.auth-form-card .form-group input[type="email"],
+.auth-form-card .form-group input[type="password"],
+.auth-form-card .form-group input[type="text"], /* For other potential inputs */
+.auth-form-card .form-group select.form-control {
+  background-color: #fdfdff; /* Slightly off-white, almost white */
+  border: 1px solid #d8dde2; /* Softer, lighter border */
+  padding: 15px 18px; /* Generous padding */
+  border-radius: 8px; /* Consistent softer radius */
+  font-size: 1rem;
+  color: #343a40; /* Darker input text for better contrast */
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.03); /* Subtle inner shadow */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-form-card .form-group input:focus,
+.auth-form-card .form-group select.form-control:focus {
+  background-color: #fff;
+  border-color: #86b7fe; /* Standard focus blue */
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25), inset 0 1px 2px rgba(0,0,0,0.03);
+}
+
+.auth-form-card .submit-button {
+  margin-top: 2rem;
+  padding: 15px 25px; /* Slightly larger */
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 50px;
+  text-transform: uppercase; /* More 'button-like' */
+  letter-spacing: 0.8px; /* Slight letter spacing */
+  background-color: #007bff; /* Strong primary */
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+.auth-form-card .submit-button:hover:not(:disabled) {
+  background-color: #0069d9; /* Slightly darker primary */
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+  transform: translateY(-2px);
+}
+.auth-form-card .submit-button:disabled {
+  background-color: #b0c4de; /* Lighter blue when disabled */
+  box-shadow: none;
+  transform: none;
+}
+
+.auth-links {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+.auth-links p {
+  margin-bottom: 0.6rem;
+  color: #6c757d;
+}
+.auth-links a {
+  color: #007bff;
+  font-weight: 500;
+  text-decoration: none;
+}
+.auth-links a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+/* --- Change Password Page Specifics --- */
+/* The .change-password-form-card will inherit from .auth-form-card */
+/* The specific icon .change-password-icon class is fine from previous CSS if it centered correctly. */
+/* We can use the existing .auth-form-icon if the text icon is okay, or style it specifically. */
+/* For this pass, let's assume .auth-form-icon is good enough. */
+
+.change-password-actions {
+  margin-top: 2rem; /* Increased space */
+  display: flex;
+  justify-content: space-between; /* Space out Cancel and Continue */
+  gap: 15px; 
+}
+
+/* Re-style .btn-continue and .btn-cancel to be more distinct and fashionable */
+.btn-continue, .btn-cancel {
+  padding: 12px 25px; /* More padding */
+  border-radius: 8px; /* Softer radius */
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: none; /* Remove border for cleaner look */
+  flex-grow: 1; /* Make buttons take equal space if desired */
+  text-align: center;
+}
+
+.btn-continue {
+  background-color: #007bff; /* Primary call to action */
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.25);
+}
+.btn-continue:hover:not(:disabled) {
+  background-color: #0062cc;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.35);
+}
+.btn-continue:disabled {
+  background-color: #adcdeb;
+  box-shadow: none;
+}
+
+.btn-cancel {
+  background-color: #f0f2f5; /* Light grey, almost transparent */
+  color: #495057; /* Darker text for contrast */
+  /* border: 1px solid #ced4da; /* Optional: bring back a subtle border */
+}
+.btn-cancel:hover:not(:disabled) {
+  background-color: #e2e6ea;
+  color: #212529;
+}
+.btn-cancel:disabled{
+    color: #adb5bd;
+    background-color: #f8f9fa;
+}
+
+/* Ensure global feedback messages are styled well (from App.css) */
+.auth-form-card .form-feedback {
+    margin-top: 1rem;
+}
